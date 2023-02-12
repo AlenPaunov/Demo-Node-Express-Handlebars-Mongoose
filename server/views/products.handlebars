@@ -1,16 +1,17 @@
 <script>
   function deleteProduct(id) {
-    console.log("ID", id);
     fetch(`/product/edit/${id}`, { method: "DELETE" });
-    console.log("delete");
   }
 </script>
+
 <ul id="products">
   {{#each products}}
-  <li>Title:{{title}} - Price:{{price}} /// "{{description}}"</li> <a href="/products/edit/{{_id}}">Edit</a>
-  <a href="/products/delete/{{_id}}">Delete</a>
+  <div>
+    <li>Title:{{title}} - Price:{{price}} /// "{{description}}"</li> <a href="/products/{{_id}}">Edit</a>
+    <a href="/products/delete/{{_id}}">Delete</a>
+  </div>
   {{/each}}
 </ul>
-<form class="row g-3 needs-validation" method="POST" action="/products/create" novalidate>
+<form method="POST" action="/products/create">
   {{> product-form}}
 </form>

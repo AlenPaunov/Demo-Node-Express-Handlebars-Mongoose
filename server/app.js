@@ -1,17 +1,19 @@
 import express from "express";
-import bodyParser from 'body-parser';
 import { engine } from 'express-handlebars';
-import routes from "./routes.js";
+import bodyParser from 'body-parser';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { connect } from "./database.js";
-
+import routes from "./routes.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename)
+
 const app = express();
 const port = 3000;
+
 connect();
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
