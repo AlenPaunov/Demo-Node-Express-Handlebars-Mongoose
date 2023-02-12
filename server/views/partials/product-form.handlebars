@@ -1,0 +1,26 @@
+<div>
+  <div>
+    <input type="text" value="{{this.title}}" placeholder="Title" name="title">
+    <label>Title</label>
+  </div>
+</div>
+<div>
+  <div>
+    <input type="number" value="{{this.price}}" placeholder="Price" name="price">
+    <label>Price</label>
+  </div>
+</div>
+<div>
+  <div>
+    <input type="text" value="{{this.description}}" placeholder="Description" name="description">
+    <label>Description</label>
+  </div>
+</div>
+
+<div>
+  {{#if editMode}}
+  <button type="submit">Edit</button>
+  {{else}}
+  <button type="submit">Submit</button>
+  {{/if}}
+</div>
