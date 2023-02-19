@@ -18,7 +18,6 @@ productController.get('/create', (req, res) => {
 // create new product
 productController.post('/create', async (req, res) => {
   let data = req.body;
-  console.log(data);
   await Product.create(data);
   res.redirect('/products');
 })
@@ -36,7 +35,6 @@ productController.post('/:id', async (req, res) => {
   const id = req.params.id;
   let product = await Product.findByIdAndUpdate(id, data, { returnOriginal: false });
 
-  console.log(product);
   res.redirect('/products');
 })
 

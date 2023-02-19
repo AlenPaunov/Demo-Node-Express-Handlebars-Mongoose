@@ -1,6 +1,6 @@
 import express from 'express';
 import productController from './controllers/productController.js';
-
+import authController from './controllers/authController.js';
 
 const router = express.Router();
 
@@ -13,7 +13,7 @@ router.get('/about', (req, res) => {
 })
 
 router.use('/products', productController);
-// router.use('/users', userController);
+router.use('/auth', authController);
 // router.use('/auth', authController);
 // router.use('/payment', paymentController);
 
